@@ -1,4 +1,4 @@
-# Miss Maple's Donuts:doughnut:
+# Miss Maple's Donuts :doughnut:
 ## Welcome to Miss Maple's Donuts!
 Here you can challenge your baking skills while playing a game! Are you ready?
 #### <https://scratch.mit.edu/projects/874795309/>
