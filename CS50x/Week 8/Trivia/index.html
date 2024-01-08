@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            function corChecker(correct, element) {
+                if (correct) {
+                    document.getElementById(element).innerHTML = "Correct!";
+                    }
+                else {
+                    document.getElementById(element).innerHTML = "Incorrect";
+                }
+            }
+
+            function resetBtn() {
+                var btns = document.querySelectorAll(".button");
+
+                btns.forEach(function (btn) {
+                btn.classList.remove('correct', 'incorrect');
+                });
+            }
+
+            function answerGet() {
+                resetBtn();
+                if(event.target.id == "correct") {
+                    event.target.classList.add('correct');
+                    corChecker(true, "emptyheader");
+                }
+                else {
+                    event.target.classList.add('incorrect');
+                    corChecker(false, "emptyheader");
+                }
+            }
+
+            document.addEventListener("DOMContentLoaded", function (event) {
+                var btns = document.querySelectorAll(".button");
+                btns.forEach(function (btn) {
+                    btn.addEventListener("click", answerGet);
+                });
+
+                inputField = document.querySelector('input');
+                checkButton = document.querySelector("#check");
+                checkButton.addEventListener('click', function (evt) {
+                    if (inputField.value.toLowerCase() == "greyjoy") {
+                        corChecker(true, "emptyheader2");
+                        inputField.classList.add('correct');
+                    }
+                    else {
+                        corChecker(false, "emptyheader2");
+                        inputField.classList.add('incorrect');
+                    }
+                });
+            });
+
+        </script>
+    <style>
+        .correct {
+            background-color: green;
+            color: white;
+        }
+
+        .incorrect {
+            background-color: red;
+            color: white;
+        }
+
+        input.correct {
+            border: 2px solid green;
+        }
+
+        input.incorrect {
+            border: 2px solid red;
+        }
+    </style>
+
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>Which Game of Thrones character is known as the Young Wolf?</h3>
+                <h2 id="emptyheader"></h2>
+                <button class="button">Sansa Stark</button>
+                <button id="correct" class="button">Robb Stark</button>
+                <button class="button">Arya Stark</button>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>What House's motto is 'We Do Not Sow'?</h3>
+                <h2 id="emptyheader2"></h2>
+                <input type="text">
+                <button id="check" class="input">Confirm!</button>
+            </div>
+        </div>
+    </body>
+</html>

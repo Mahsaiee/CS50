@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <form action="/index" method="post" class="form">
+        <div class="form-box">
+            <div class="input-group">
+                <input autocomplete="off" type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+
+            <div class="input-group">
+                <input type="date" id="date" name="date" required>
+            </div>
+
+            <div class="input-group">
+                <textarea id="note" name="note" placeholder="Enter your note here" required></textarea>
+            </div>
+
+            <button class="submit-btn" type="submit">Save Note</button>
+        </div>
+    </form>
+{% endblock %}

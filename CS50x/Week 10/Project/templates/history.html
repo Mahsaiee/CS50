@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <div class="group-box">
+    <h1>Previous Notes</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Note</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for note in notes %}
+        <tr>
+          <td>{{ note['name'] }}</td>
+          <td>{{ note['note'] }}</td>
+          <td>{{ note['date'].strftime("%Y-%m-%d") }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

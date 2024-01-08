@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block main %}
+    <h1>Stock Value</h1>
+
+    {% if stock %}
+        <p>
+            Symbol: {{ stock.symbol }}<br>
+            Name: {{ stock.name }}<br>
+            Price: {{ stock.price }}<br>
+        </p>
+    {% else %}
+        <p>No stock found for the provided symbol.</p>
+    {% endif %}
+{% endblock %}
